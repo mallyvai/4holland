@@ -10,9 +10,7 @@ Why have they failed, and what will be necessary for a true solution to the
 problem to finally succeed?
 
 
-
-As the computer sciences have advanced, we have seen an increase in predictive, adaptive, and learning technologies. However, most of these changes have been hidden from the average user and have become fairly ubiquitos.
-
+As the computer sciences have advanced, we have seen an increase in predictive, adaptive, and learning technologies. However, most of these changes have been hidden from the average user and have become fairly ubiquitous.
 
 Tierra was an open-ended experiment by ecologist Thomas Ray. During the 1980s, a programmer's game called Core Wars enjoyed a small degree of popularity. Two programmers write competing programs that run in a 2D-dimensional grid, also known as a virtual arena or a "core". A programmer's instructions A programmer's goal is to have their own program be the last one standing.
 
@@ -23,14 +21,43 @@ Thomas Ray took these basic concepts and altered them, making Tierra:
 	2) We had multiple distinct programs that would "compete" for survival, instead of a single program
 	3) A background "reaver" killed off programs that were deemed too old.
 	
-The initial grid was populated with a very simple 80-byte large program that just duplicated itself. After a few thousand clones, the mutation rate caused small variants to appear that were largely identical. However, after some generations, vastly different programs were "evolved", including parasitic programs that were only 45 bytes long, even shorter programs that were parasites of the parasites, and so forth.	
+The initial grid was populated with a very simple 80-byte large program that just duplicated itself. After a few thousand clones, the mutation rate caused small variants to appear that were largely identical. However, after some generations, vastly different programs were "evolved", including parasitic programs that were only 45 bytes long, even shorter programs that were parasites of the parasites, and so forth. 
+
+When Tierra was released, there was a flurry of press coverage proclaiming the radical second coming of artificial life - and indeed, the behavior exhibited by the modified Core Wars engine ie really quite fascinating. Upon closer inspection however, the creatures produced by Tierra at any reasonable (at the time) scale seemed to have a fairly limited information-theoretic complexity. Russel Standish showed` 
+
+Although Tierra's general approach may be promising, Tierra creatures themselves were found to have low theoretical complexity - the curve of interesting creatures flattens out quickly.
 
 Will having three dimensions in a simulation be necessary? For a structural simulation of life, obviously. But for a behaviorial simulation, perhaps not - we can find abundant diversity in the numbers of bacteria, protozoa, and other microorganisms, and we can say that these coexist on an approximately two-dimensional plane - right? Well, we don't know. But it's a point worth considering.
 
-One thing to note in many of these simulations is that there is an *explicit* way to reproduce or breed. Would it be fruitful to devise a system in which 
+One thing to note in many of these simulations is that there is an *explicit* way to reproduce or breed. Would it be fruitful to devise a system in which the breeding process itself was "emerged"? This would mean a much lower-level simulation of "stuff" since we'd presumably have to simulate some lower level physics and stuff. Also, we could emerge a more novel set of breeding methods than we currently know about. However, this may not even be necessary.
+
+Darwin@home (hereafter referred to as DH) is a much higher-level take on A-Life. Instead of abstract programs, we deal directly with "creatures" formed via a particular physics simulation known as Tensegrity
+
+
+
 
 
 [1] Beginners Guide to Redcode http://vyznev.net/corewar/guide.html
 http://devolab.msu.edu/
 http://www.infidels.org/library/modern/meta/getalife/coretierra.html
 http://www.biota.org/book/chbi/chbi4.htm
+On an efficient Implementation of Tierra http://www.complexity.org.au/ci/vol04/eff-tierra/eff-tierra.html
+
+#The article that talks about bounded complexity
+@ARTICLE{Standish03open-endedartificial,
+    author = {Russell K. Standish},
+    title = {Open-ended artificial evolution},
+    journal = {International Journal of Computational Intelligence and Applications},
+    year = {2003},
+    volume = {3},
+    pages = {2003}
+}
+
+#Talks about DP + Tierra kinda
+@ARTICLE{Standish97onan,
+    author = {Russell K. Standish},
+    title = {On an efficient implementation of Tierra},
+    journal = {Complexity International},
+    year = {1997},
+    volume = {4}
+}
