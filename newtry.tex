@@ -1,31 +1,72 @@
-A-life and AI have been two of the great unfulfilled promises of the computing age. A key component in any potential unified theory of complex adaptive systems, the twin disciplines have experienced a long winter of disillusionment and lack of visibility since the glory days of the 1960s. However, the field has not been completely dormant, and incremental progress has been made on numerous fronts, including synthetic evolution, cognitive architecture, and other areas.
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{cite}
+\usepackage[dvips]{graphicx}
+\usepackage{listings}
+\bibliographystyle{plain}
 
-Artificial life is probably one of the most-sought after yet unfulfilled
-promises of the computing era. What exactly makes the search for A-life and
-open-ended evolution an important part of the search for a general theory
-of cas? There have been a number of novel attempts to create  workable
-a-life, or simulate open-ended biological evolution, included Tierra,
-Darwin @ Home, Spore, and many others. Somehow, all of these have failed.
-Why have they failed, and what will be necessary for a true solution to the
-problem to finally succeed?
+\begin{document}
+\title{A Survey of Modern A-Life and Synthetic Evolution}
+\author{Vaibhav Mallya}
+\maketitle
+\section{Abstract}
+
+Artificial life is one of the most sought-after yet most-unfulfilled dreams of the computing era. What makes the search for A-life, and open-ended evolution in particular, such an important part of the search for a general theory of complex adaptive systems (hereafter referred to cas)? In this paper, we dissect some of the most well-known and novel attempts to create a good simulation of open-ended biological evolution \emph{in silico}, including Tierra, Darwin@Home and Spore. Why have they failed, and what will be necessary for a good solution to the problem to finally succeed?
+
+\section{Introduction}
+As the computer sciences have advanced, we have seen an increase in numerous predictive and adaptive technologies. Regardless, the hard A-life problem of open-ended evolution has remained relatively unfazed since most of these advances have been in information retrieval, data mining, and machine learning.
+
+The study of complex adaptive systems is intimately linked to the search for artificial life, in no small part because biological ecosystems are a classic case study in chaos, adaptain, and nonlinearity. One of the problems in studying cas (indeed, studying any chaotic system) is that making any accurate prediction beyond the short or medium term is impossible simply because the full state of the system cannot be perfectly determined. Small errors in measurement snowball rapidly, and cause any predictive model to quickly spiral to inaccuracy. If we knew we could simulate a cas in its entirety \emph{in silico}, we could use it to validate potential unifying theories with a much higher degree of certainity.
+
+Things that simulate artificial life have to choose precisely where to draw boundaries between what to give as primitives and what should be emerged. We don't even know what boundaries are relevant. There isn't even a single universally accepted definition of life itself! We propose yet another definition for life:
+
+Realing A key component in any potential unified theory of complex adaptive systems, the twin disciplines have experienced a long winter of disillusionment and lack of visibility since the glory days of the 1960s. However, the field has not been completely dormant, and incremental progress has been made on numerous fronts, including synthetic evolution, cognitive architecture, and other areas.
+
+Tierra was an open-ended experiment by ecologist Thomas Ray. It was derived from a modestly popular two-person programmer's game created during the 1980s called Core Wars. The premise of Core Wars is as follows:
+
+\begin{itemize}
+\item The playing field is a two-dimensional grid that represents a virtual machine's memory space
+\item Every square of the grid contains a Redcode instruction
+\item Players write a "warrior" (programs) in Redcode
+\item The grid is randomly populated with each player's warrior at once to begin the game
+\item The simultion then produces automatically and completely deterministically
+\item Warrior-programs are deterministically executed one after another, with players alternating 
+\item The player whose warriors dominate the virtual memory space after some number of cycles wins.
+\end{itemize}
+
+Redcode is an abstract RISC assembly language, and is itself is fairly simple:
+
+\begin{itemize}
+\item Every instruction is a three-tuple of opcode, source address, destination address
+\item Minimal opcode set (10 total)
+\item In addition to add/subtract, notable opcodes include copy and move
+\item Impossible to create an invalid instruction in the underlying numeric representation
+\item Instructions are indivisible - they cannot be partially overwritten or copied
+\end{itemize}
+
+	Although very basic, there is a surprising amount of complexity that can emerge very quickly when playing Core Wars. For instance, as a result of the instruction set and the rules of the game, polymorphism is the rule rather than the exception. Additionally, there have even been several implementations of the genetic algorithm to breed optimize Core Wars warriors. What Thomas Ray did with Tierra was the following: 
+
+\begin{itemize}
+\item Instead of being perfect, cloning operations randomly mutate the genotype
+\item A background "reaver" killed off programs that were deemed too old
+\item Eliminate the players and just let the system execute on its own
+\end{itemize}
+
+The initial grid was populated with a very simple 80-byte large program that just duplicated itself. After a few thousand clones, the mutation rate caused small variants to appear that were largely identical. However, after some generations, vastly different programs were "evolved", including parasitic programs that were only 45 bytes long, even shorter programs that were parasites of the parasites, and so forth. Although Tierra's general approach may be promising, Tierra creatures themselves were found to have low overall complexity - the curve of interesting entities flattens out quickly with the provided parameter set. Scaling in particular was an important issue, and one that will be revisted later in other analyses.
 
 
-As the computer sciences have advanced, we have seen an increase in predictive, adaptive, and learning technologies. However, most of these changes have been hidden from the average user and have become fairly ubiquitous.
 
-Tierra was an open-ended experiment by ecologist Thomas Ray. During the 1980s, a programmer's game called Core Wars enjoyed a small degree of popularity. Two programmers write competing programs that run in a 2D-dimensional grid, also known as a virtual arena or a "core". A programmer's instructions A programmer's goal is to have their own program be the last one standing.
+Simulations have been either behavorial or structural, a
 
-There are ten instructions, and every instruction is a fixed-size three-tuple of a source address, destination address, and the opcode itself. Aside from basic arithmetic, most redcode instructions allow self-modification and self-copying. In Core Wars, polymorphism is the rule rather than the exception. Instructions are indivisible, and there is no such thing as an invalid instruction. A very small number of instructions here can lead to a surprising degree of complexity, and there are instructions for more esoteric purposes, such as simulated parallel programming.
+There are a few common definitions, ranging from the extremely physical
 
-Thomas Ray took these basic concepts and altered them, making Tierra:
-	1) Cloning operations would randomly mutate
-	2) We had multiple distinct programs that would "compete" for survival, instead of a single program
-	3) A background "reaver" killed off programs that were deemed too old.
+\begin{itemize}
+\item Adaptation - Continue to function within a range of circumstances
+\item Energy conversion - Convert energy from one form to another
+\end{itemize}
 	
-The initial grid was populated with a very simple 80-byte large program that just duplicated itself. After a few thousand clones, the mutation rate caused small variants to appear that were largely identical. However, after some generations, vastly different programs were "evolved", including parasitic programs that were only 45 bytes long, even shorter programs that were parasites of the parasites, and so forth. 
+When Tierra was released, there was a flurry of press coverage proclaiming the radical second coming of artificial life - and indeed, the behavior exhibited by the modified Core Wars engine ie really quite fascinating. Upon closer inspection however, the creatures produced by Tierra at any reasonable (at the time) scale seemed to have a fairly limited information-theoretic complexity, as demonstrated by  Russel Standish. [were standish's methods experimental or information-theoretical? has there been any information-theoretical work done on this?]
 
-When Tierra was released, there was a flurry of press coverage proclaiming the radical second coming of artificial life - and indeed, the behavior exhibited by the modified Core Wars engine ie really quite fascinating. Upon closer inspection however, the creatures produced by Tierra at any reasonable (at the time) scale seemed to have a fairly limited information-theoretic complexity. Russel Standish showed` 
-
-Although Tierra's general approach may be promising, Tierra creatures themselves were found to have low theoretical complexity - the curve of interesting creatures flattens out quickly.
 
 Will having three dimensions in a simulation be necessary? For a structural simulation of life, obviously. But for a behaviorial simulation, perhaps not - we can find abundant diversity in the numbers of bacteria, protozoa, and other microorganisms, and we can say that these coexist on an approximately two-dimensional plane - right? Well, we don't know. But it's a point worth considering.
 
@@ -37,27 +78,7 @@ Darwin@home (hereafter referred to as DH) is a much higher-level take on A-Life.
 
 
 
-[1] Beginners Guide to Redcode http://vyznev.net/corewar/guide.html
-http://devolab.msu.edu/
-http://www.infidels.org/library/modern/meta/getalife/coretierra.html
-http://www.biota.org/book/chbi/chbi4.htm
-On an efficient Implementation of Tierra http://www.complexity.org.au/ci/vol04/eff-tierra/eff-tierra.html
 
-#The article that talks about bounded complexity
-@ARTICLE{Standish03open-endedartificial,
-    author = {Russell K. Standish},
-    title = {Open-ended artificial evolution},
-    journal = {International Journal of Computational Intelligence and Applications},
-    year = {2003},
-    volume = {3},
-    pages = {2003}
-}
-
-#Talks about DP + Tierra kinda
-@ARTICLE{Standish97onan,
-    author = {Russell K. Standish},
-    title = {On an efficient implementation of Tierra},
-    journal = {Complexity International},
-    year = {1997},
-    volume = {4}
-}
+ 
+\bibliography{paper_cite}
+\end{document}
