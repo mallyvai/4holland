@@ -11,25 +11,35 @@
 \maketitle
 \section{Abstract}
 
-Artificial life is one of the most sought-after yet most-unfulfilled dreams of the computing era. What makes the search for A-life, and open-ended evolution in particular, such an important part of the search for a general theory of complex adaptive systems (hereafter referred to cas)? In this paper, we dissect some of the most well-known and novel attempts to create a good simulation of open-ended biological evolution \emph{in silico}, including Tierra, Darwin@Home and Spore. Why have they failed, and what will be necessary for a good solution to the problem to finally succeed?
+Artificial life is one of the most sought-after yet most-unfulfilled dreams of the computing era.
+What makes the search for A-life, and open-ended evolution in particular, such an important part of the search for a general theory of complex adaptive systems?
+We dissect the well-known A-life simulation Tierra, to try determine why it failed. We pose the question: what might be necessary for a good solution to the problem to succeed?
 
 \section{Introduction}
 As the computer sciences have advanced, we have seen an increase in numerous predictive and adaptive technologies. Regardless, the hard A-life problem of open-ended evolution has remained relatively unfazed since most of these advances have been in information retrieval, data mining, and machine learning.
 
-The study of complex adaptive systems is intimately linked to the search for artificial life, in no small part because biological ecosystems are a classic case study in chaos, adaptain, and nonlinearity. One of the problems in studying cas (indeed, studying any chaotic system) is that making any accurate prediction beyond the short or medium term is impossible simply because the full state of the system cannot be perfectly determined. Small errors in measurement snowball rapidly, and cause any predictive model to quickly spiral to inaccuracy. If we knew we could simulate a cas in its entirety \emph{in silico}, we could use it to validate potential unifying theories with a much higher degree of certainity.
+The study of complex adaptive systems is intimately linked to the search for artificial life in no small part because biological ecosystems are a classic case study in chaos, adaptation, and nonlinearity. One of the problems in studying real-world cas (indeed, studying any chaotic system) is that making any accurate prediction beyond the short or medium term is impossible, simply because the full state of the system cannot be totally determined. 
+Small errors in measurement snowball rapidly, and cause any predictive model to quickly spiral to inaccuracy. If we knew we could simulate a cas in its entirety \emph{in silico} - that is, without any error in determination of state - we could use it to validate potential unifying theories with a much higher degree of certainity.
 
-Things that simulate artificial life have to choose precisely where to draw boundaries between what to give as primitives and what should be emerged. We don't even know what boundaries are relevant. There isn't even a single universally accepted definition of life itself! We propose yet another definition for life:
+A-life is important precisely because we can have total knowledge of the system at any given point of time. By observing the environment in a completely controlled system, we can eliminate the uncertainities in measurement that frustrate so many real-world models. 
+
+Additionally, we can exploit the fact that since we have total control over the simulated environment, we retain the ability to perturb the simulation in a way that allows us to test specific facets of the theory. This is obviously non-trivial to accomplish in, for example financial systems.
+
+\section{Stuff}
+
+s that simulate artificial life have to choose precisely where to draw boundaries between what to give as primitives and what should be emerged. We don't even know what boundaries are relevant. There isn't even a single universally accepted definition of life itself! We propose yet another definition for life:
 
 Realing A key component in any potential unified theory of complex adaptive systems, the twin disciplines have experienced a long winter of disillusionment and lack of visibility since the glory days of the 1960s. However, the field has not been completely dormant, and incremental progress has been made on numerous fronts, including synthetic evolution, cognitive architecture, and other areas.
 
-Tierra was an open-ended experiment by ecologist Thomas Ray. It was derived from a modestly popular two-person programmer's game created during the 1980s called Core Wars. The premise of Core Wars is as follows:
+\section{Tierra}
+Tierra was an open-ended digital experiment conducted by ecologist Thomas Ray. It was derived from a modestly popular two-person programmer's game created during the 1980s called Core Wars. The premise of Core Wars is as follows:
 
 \begin{itemize}
 \item The playing field is a two-dimensional grid that represents a virtual machine's memory space
 \item Every square of the grid contains a Redcode instruction
 \item Players write a "warrior" (programs) in Redcode
 \item The grid is randomly populated with each player's warrior at once to begin the game
-\item The simultion then produces automatically and completely deterministically
+\item The simulation then produces automatically and completely deterministically
 \item Warrior-programs are deterministically executed one after another, with players alternating 
 \item The player whose warriors dominate the virtual memory space after some number of cycles wins.
 \end{itemize}
@@ -52,7 +62,9 @@ Redcode is an abstract RISC assembly language, and is itself is fairly simple:
 \item Eliminate the players and just let the system execute on its own
 \end{itemize}
 
-The initial grid was populated with a very simple 80-byte large program that just duplicated itself. After a few thousand clones, the mutation rate caused small variants to appear that were largely identical. However, after some generations, vastly different programs were "evolved", including parasitic programs that were only 45 bytes long, even shorter programs that were parasites of the parasites, and so forth. Although Tierra's general approach may be promising, Tierra creatures themselves were found to have low overall complexity - the curve of interesting entities flattens out quickly with the provided parameter set. Scaling in particular was an important issue, and one that will be revisted later in other analyses.
+The initial grid was populated with a very simple 80-byte large program that just duplicated itself. After a few thousand clones, the mutation rate caused small variants to appear that were largely identical.
+However, after several generations, vastly different programs "evolved", including parasitic programs that were only 45 bytes long, extremely shorter programs that were parasites of the parasites, and so forth.
+Although Tierra's general approach may be promising, Tierra creatures themselves were found to have low overall complexity - the curve of interesting entities flattens out quickly with the provided parameter set. Scaling in particular was a major issue.
 
 
 
