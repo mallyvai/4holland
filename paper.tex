@@ -13,7 +13,7 @@
 
 Artificial life is one of the most sought-after yet most-unfulfilled dreams of the computing era.
 What makes the search for A-life, and open-ended evolution in particular, such an important part of the search for a general theory of complex adaptive systems?
-We dissect the well-known A-life simulation Tierra, to try determine why it failed. We pose the question: what might be necessary for a good solution to the problem to succeed?
+In this paper, we dissect the well-known A-life simulation Tierra, and try determine where it failed. We pose the question: what might be necessary for a good solution to the problem to succeed?
 
 \section{Introduction}
 As the computer sciences have advanced, we have seen an increase in numerous predictive and adaptive technologies. Regardless, the hard A-life problem of open-ended evolution has remained relatively unfazed since most of these advances have been in information retrieval, data mining, and machine learning.
@@ -25,13 +25,13 @@ A-life is important precisely because we can have total knowledge of the system 
 
 Additionally, we can exploit the fact that since we have total control over the simulated environment, we retain the ability to perturb the simulation in a way that allows us to test specific facets of the theory. This is obviously non-trivial to accomplish in, for example financial systems.
 
-\section{Stuff}
+\section{Definitions}
 
 s that simulate artificial life have to choose precisely where to draw boundaries between what to give as primitives and what should be emerged. We don't even know what boundaries are relevant. There isn't even a single universally accepted definition of life itself! We propose yet another definition for life:
 
 Realing A key component in any potential unified theory of complex adaptive systems, the twin disciplines have experienced a long winter of disillusionment and lack of visibility since the glory days of the 1960s. However, the field has not been completely dormant, and incremental progress has been made on numerous fronts, including synthetic evolution, cognitive architecture, and other areas.
 
-\section{Tierra}
+\section{Description of Tierra}
 Tierra was an open-ended digital experiment conducted by ecologist Thomas Ray. It was derived from a modestly popular two-person programmer's game created during the 1980s called Core Wars. The premise of Core Wars is as follows:
 
 \begin{itemize}
@@ -44,14 +44,14 @@ Tierra was an open-ended digital experiment conducted by ecologist Thomas Ray. I
 \item The player whose warriors dominate the virtual memory space after some number of cycles wins.
 \end{itemize}
 
-Redcode is an abstract RISC assembly language, and is itself is fairly simple:
+Redcode is a simple abstract RISC assembly language:
 
 \begin{itemize}
 \item Every instruction is a three-tuple of opcode, source address, destination address
 \item Minimal opcode set (10 total)
 \item In addition to add/subtract, notable opcodes include copy and move
 \item Impossible to create an invalid instruction in the underlying numeric representation
-\item Instructions are indivisible - they cannot be partially overwritten or copied
+\item Instructions are indivisible - no partial overwriting or copying
 \end{itemize}
 
 	Although very basic, there is a surprising amount of complexity that can emerge very quickly when playing Core Wars. For instance, as a result of the instruction set and the rules of the game, polymorphism is the rule rather than the exception. Additionally, there have even been several implementations of the genetic algorithm to breed optimize Core Wars warriors. What Thomas Ray did with Tierra was the following: 
@@ -59,11 +59,11 @@ Redcode is an abstract RISC assembly language, and is itself is fairly simple:
 \begin{itemize}
 \item Instead of being perfect, cloning operations randomly mutate the genotype
 \item A background "reaver" killed off programs that were deemed too old
-\item Eliminate the players and just let the system execute on its own
+\item No players and no explicit notion of winning or losing
 \end{itemize}
 
-The initial grid was populated with a very simple 80-byte large program that just duplicated itself. After a few thousand clones, the mutation rate caused small variants to appear that were largely identical.
-However, after several generations, vastly different programs "evolved", including parasitic programs that were only 45 bytes long, extremely shorter programs that were parasites of the parasites, and so forth.
+The initial grid was populated with a very simple 80-byte large program that just duplicated itself. After a few thousand iterations, the small copy mutation rate caused small variants to appear that were largely identical.
+However, after several more generations, drastically different programs "evolved", including parasitic programs that were only 45 bytes long, extremely shorter programs that were parasites of the parasites, and so forth.
 Although Tierra's general approach may be promising, Tierra creatures themselves were found to have low overall complexity - the curve of interesting entities flattens out quickly with the provided parameter set. Scaling in particular was a major issue.
 
 
@@ -71,13 +71,14 @@ Although Tierra's general approach may be promising, Tierra creatures themselves
 Simulations have been either behavorial or structural, a
 
 There are a few common definitions, ranging from the extremely physical
+We need spatial locality (?)
 
 \begin{itemize}
 \item Adaptation - Continue to function within a range of circumstances
 \item Energy conversion - Convert energy from one form to another
 \end{itemize}
 	
-When Tierra was released, there was a flurry of press coverage proclaiming the radical second coming of artificial life - and indeed, the behavior exhibited by the modified Core Wars engine ie really quite fascinating. Upon closer inspection however, the creatures produced by Tierra at any reasonable (at the time) scale seemed to have a fairly limited information-theoretic complexity, as demonstrated by  Russel Standish. [were standish's methods experimental or information-theoretical? has there been any information-theoretical work done on this?]
+When the Tierra results were released, there was a flurry of press coverage proclaiming the radical second coming of artificial life - and indeed, the behavior exhibited by the modified Core Wars engine ie really quite fascinating. Upon closer inspection however, the creatures produced by Tierra at any reasonable (at the time) scale seemed to have a fairly limited information-theoretic complexity, as demonstrated by  Russel Standish. [were standish's methods experimental or information-theoretical? has there been any information-theoretical work done on this?]
 
 
 Will having three dimensions in a simulation be necessary? For a structural simulation of life, obviously. But for a behaviorial simulation, perhaps not - we can find abundant diversity in the numbers of bacteria, protozoa, and other microorganisms, and we can say that these coexist on an approximately two-dimensional plane - right? Well, we don't know. But it's a point worth considering.
